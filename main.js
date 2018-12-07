@@ -34,7 +34,7 @@ function division (x, y) {
 }
 
 function mathOperation (arg1, arg2, operation) {
-    var arg1 = x;
-    var arg2 = y;
-    var operation;
-     
+    arg1 = x;
+    arg2 = y;
+    operation;
+}
