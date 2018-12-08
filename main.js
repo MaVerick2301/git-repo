@@ -34,7 +34,31 @@ function division (x, y) {
 }
 
 function mathOperation (arg1, arg2, operation) {
-    arg1 = x;
-    arg2 = y;
-    operation;
+    
+    var result;
+    switch (operation) {
+    case '+':
+        result = addition (arg1, arg2);
+        return result;
+    case '-':
+        result = substraction (arg1, arg2);
+        return result;
+    case '*':
+        result = multiplication (arg1, arg2);
+        return result;
+    case '/':
+        result = division (arg1, arg2);
+        return result;
+    default:
+        result = 'Unexpected operation'
+        return result;
+    }
 }
+
+var arg1 = +prompt('x');
+var arg2 = +prompt('y');
+var operation = prompt('Действие? ( +, -, *, / )');
+
+alert(mathOperation(arg1, arg2, operation));
+
+alert(null == 0)
