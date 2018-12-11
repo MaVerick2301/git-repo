@@ -1,6 +1,31 @@
 
-a = Math.floor(Math.random() * (100 - 0 + 1)) + 0;
-while (a <= 15) {
+
+
+
+
+
+
+var a = 1;
+while (a <= 100) {
     console.log(a);
     ++a;
+}
+
+
+
+
+
+
+for (var i = 1; i < 10; i++)
+console.log(i);
+
+var i = 1;
+var n = 20;
+var k = 'x';
+while(true) {
+    console.log(k);
+    k = k + 'x';
+    i++;
+    if (i > n)
+    break;
 }
