@@ -1,90 +1,58 @@
-var a = 4;
-var b = -5;
-if (a > 0 && b > 0) {
-console.log(a - b);
-} else if (a < 0 && b < 0) {
-    console.log(a * b);
-} else {
-    console.log(a + b);
+
+//____________   Задание №2 "Корзина" 
+
+
+var arrCart = ['T-shirt:20.37', 'Shoes:62.43', 'Jacket:146.95',
+    'Jeans:42.80']; //"Входной" необработанный массив
+var arrItems = []; //массив для товаров
+var arrPrice = []; //массив для цен
+var arrPriceWithDollar = []; //массив для вывода, с долларом
+var totalPrice = 0; //переменная для суммы покупок
+
+for (var i = 0; i < arrCart.length; i++) {
+    var k = (arrCart[i].indexOf(':')); //ловлю позицию разделителя
+    arrItems.push(arrCart[i].slice(0, k)); //собираю массив из товаров для показа, весь текст налево от разделителя
+    arrPrice.push(arrCart[i].slice(k+1)); //собираю "технический" масив для расчетов, направо от разделителя
+    arrPriceWithDollar.push(arrCart[i].slice(k+1) + '$'); //собираю массив из цен для показа, с добавлением доллара
+    }
+for (var i = 0; i < arrPrice.length; i++) {
+    var arrString = arrPrice[i].toString(); //преобразую каждый элемент массива в отдельную строку
+    y = Number(arrString); //преобразую строку в число
+    totalPrice = totalPrice + y; //считаю общую сумму покупок, обрабатывая поочередно элементы массива
 }
+totalPrice = totalPrice.toFixed(); //привожу общую сумму к целому
+alert('Your cart is: ' + arrItems + ' with this prices: ' + 
+arrPriceWithDollar  + ' and the total price is ' + totalPrice + '$' ); //окончательный вывод
+
+   
+
+//____________   Задание №1 "С помощью цикла while вывести все простые числа в промежутке от 0 до 100."
 
 
-
-
-a = Math.floor(Math.random() * (15 - 0 + 1)) + 0;
-while (a <= 15) {
+var a = 1;
+while (a <= 100) {
     console.log(a);
     ++a;
 }
 
-function addition (x, y) {
-    return x + y;
+//____________   Задание №3 "Вывести с помощью цикла for числа от 0 до 9, не используя тело цикла."
+
+
+for (var i = 1; i < 10; i++)
+console.log(i);
+
+
+//____________   Задание №4 "Нарисовать пирамиду с 20 рядами с помощью console.log"
+
+
+var i = 1;
+var n = 20;
+var k = 'x';
+
+while(true) {
+    console.log(k);
+    k = k + 'x';
+    i++;
+    if (i > n)
+    break;
 }
-
-function substraction (x, y) {
-    return x - y;
-} 
-
-function multiplication (x, y) {
-    return x * y;
-}
-
-function division (x, y) {
-    return x / y;
-}
-
-function mathOperation (arg1, arg2, operation) {
-    
-    var result;
-    switch (operation) {
-    case '+':
-        result = addition (arg1, arg2);
-        return result;
-    case '-':
-        result = substraction (arg1, arg2);
-        return result;
-    case '*':
-        result = multiplication (arg1, arg2);
-        return result;
-    case '/':
-        result = division (arg1, arg2);
-        return result;
-    default:
-        result = 'Unexpected operation';
-        return result;
-    }
-}
-
-var arg1 = +prompt('Укажите x');
-var arg2 = +prompt('Укажите y');
-var operation = prompt('Какое действие выполнить? ( +, -, *, / )');
-
-console.log(mathOperation(arg1, arg2, operation));
-
-console.log(null == 0);
-
-function power(num, pow) {
-    if (pow === 1) {
-        return num;
-    } else {
-        return num * power(num, pow - 1);
-    }
-}
-
-
-function geomProgression (firstNum, ratio, num) {
-    if (ratio === 0) {
-        return firstNum;
-    } else {
-        var result;
-        return result = firstNum * power(ratio, num - 1);
-    }
-}
-
-var firstNum = +prompt('Укажите первый член последовательности');
-var ratio = +prompt('Укажите знаменатель прогрессии');
-var num = +prompt('Укажите порядковый номер члена прогрессии, который нужно высчитать');
-
-console.log(geomProgression (firstNum, ratio, num));
-
-
