@@ -72,17 +72,30 @@ while(true) {
 
 
 
-  var myInputNumber;
+  
 function getObject(myInputNumber) {
+
 if (myInputNumber <= 999) {
     var myInputString = myInputNumber.toString();
-    var myOutputObj = {
+    var myOutputObj;
+    if (myInputString.length === 3) {
+    myOutputObj = {
      units: myInputString[2],
      tens: myInputString[1],
      hundreds: myInputString[0],
     };
+    } else if (myInputString.length === 2) {
+        myOutputObj = {
+            tens: myInputString[0],
+            units: myInputString[1],
+        };
+    } else {
+        myOutputObj = {
+            units: myInputString[0]
+        };
+    }
     console.log(myOutputObj);
 } else {
-    console.log('Error: Input  > 999');
+    console.log('Error: Input  > 999 OR Input is NaN');
 }
 }
