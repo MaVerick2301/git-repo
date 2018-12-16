@@ -66,3 +66,23 @@ while(true) {
     if (i > n)
     break;
 }
+
+
+
+
+
+
+  var myInputNumber;
+function getObject(myInputNumber) {
+if (myInputNumber <= 999) {
+    var myInputString = myInputNumber.toString();
+    var myOutputObj = {
+     units: myInputString[2],
+     tens: myInputString[1],
+     hundreds: myInputString[0],
+    };
+    console.log(myOutputObj);
+} else {
+    console.log('Error: Input  > 999');
+}
+}
