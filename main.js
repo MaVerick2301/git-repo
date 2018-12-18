@@ -62,6 +62,6 @@ var ItemObject = {
     style: 'Bohemian',
     designer: 'Mango INC.',
     brand: 'Mango',
-    collection: fallWinter,
+    collection: 'fallWinter',
     discount: true
 };
