@@ -54,7 +54,7 @@ console.log('Общая стоимость покупок: ' + totalPrice.toFixe
 //          Задание №3 "Сущность продукта"
 
 
-var ItemObject = {
+var itemObject = {
     quantity: 3,
     price: 60.43,
     size: 'XXL',
