@@ -3,8 +3,15 @@
     color: blue;
 }
 
-.upper-description {
- display: block;
- font-size: 16px;
- width: 500px;
+.testJsDiv {
+    display: block;
+    width: 400px;
+    height: 400px;
+    background-color: aquamarine;
+}
+
+.testJsDiv2 {
+    width: 50px;
+    height: 50px;
+    background-color: blue;
 }
