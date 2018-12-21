@@ -77,6 +77,7 @@ function generateChessTable () {
         $markersSquare.innerHTML = i;
     }
     
+    
 
 
 
