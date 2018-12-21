@@ -9,6 +9,8 @@ function generateChessTable () {
     var $chessContainer = document.createElement('div');
     var $chessMarkersLeft = document.createElement('div');
     var $chessTable = document.createElement('div');
+    var letterArray = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+
 
     $chessBody.classList.add('chessBody');
     $chessHeader.classList.add('chessHeader');
@@ -63,6 +65,26 @@ function generateChessTable () {
         }
         }
     }
+
+    for (i = 0; i < 8; i++) {
+        var $headerSquare = document.createElement('div');
+        $headerSquare.classList.add('headerSquare');
+        $chessHeader.appendChild($headerSquare);
+        $headerSquare.innerHTML = letterArray[i];
+        var $markersSquare = document.createElement('div');
+        $markersSquare.classList.add('markersSquare');
+        $chessMarkersLeft.appendChild($markersSquare);
+        $markersSquare.innerHTML = i;
+    }
+    
+
+
+
+
+
+
+
+
 }
 
 function generateShoppingCart() {
