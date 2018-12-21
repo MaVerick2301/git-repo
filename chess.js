@@ -48,7 +48,7 @@ for (i = 0; i < 8; i++) {
       $chessTableString.classList.add('chessTableOddString');
       $chessTable.appendChild($chessTableString);
       for (j = 0; j < 8; j++) {
-        var $chessTableSquare = document.createElement('div');
+        $chessTableSquare = document.createElement('div');
         
         if (j % 2 == 0) {
           $chessTableSquare.classList.add('chessTableSquareWhite');
