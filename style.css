@@ -3,4 +3,44 @@
     color: blue;
 }
 
+.catalog {
+    display: flex;
+    height: 100%;
+}
 
+.catalog > div {
+    margin-right: 40px;
+}
+
+.catalogItems {
+    display: flex;
+    flex-direction: column;
+}
+
+.catalogItems > img {
+    padding-bottom: 20px;
+}
+
+.catalogItems > div {
+    padding-bottom: 20px;
+}
+
+.imageThumb {
+    width: 180px;
+    height: 200px;
+}
+
+.catalogItemButtons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.catalogItemButtonAdd {
+    width: 80px;
+    height: 40px;
+}
+
+.catalogItemButtonDelete {
+    width: 80px;
+    height: 40px;
+}
