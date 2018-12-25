@@ -26,13 +26,13 @@ var jeansItemObj = {
   quantity: 0
 };
 
-var catalogItems = [
+var catalogItems = {
   tShirtItemObj,
   shoesItemObj,
   jacketItemObj,
   jeansItemObj
-];
-var $test = [];
+};
+
 
 for (var i = 0; i < catalogItems.length; i++) {
   var $catalog = document.getElementById('catalog');
@@ -43,7 +43,7 @@ for (var i = 0; i < catalogItems.length; i++) {
   var $catalogItemButtonAdd = document.createElement('button');
   var $catalogItemButtonDelete = document.createElement('button');
   $catalogItemPrice.innerHTML = catalogItems[i].price + '$';
-  console.log(catalogItems[i].price);
+  console.log(catalogItems.attributes);
   $catalogItem.classList.add('catalogItems');
   $catalogImageThumb.classList.add('imageThumb');
   $catalogItemButtons.classList.add('catalogItemButtons');
