@@ -74,14 +74,20 @@ for (var i = 0; i < catalogItems.length; i++) {
   
 }
 $cart = document.getElementById('cart');
+$cart.classList.add('cart');
+
 
 
 
 function handleButtonAdd(event) {
   var k = this.dataset.counter;
   var $cartItems = document.createElement('div');
+  var $cartThumb = document.createElement('img');
+  $cartThumb.classList.add('cartThumb');
   cartItems.push(catalogItems[k].name, catalogItems[k].price + '$');
   $cartItems.innerHTML = cartItems;
+  $cartThumb.src = catalogItems[k].thumb;
+  $cart.appendChild($cartThumb);
   $cart.appendChild($cartItems);
   
   

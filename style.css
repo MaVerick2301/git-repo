@@ -44,3 +44,13 @@
     width: 80px;
     height: 40px;
 }
+
+.cart {
+    display: flex;
+}
+
+
+.cartThumb {
+    width: 180px;
+    height: 200px; 
+}
