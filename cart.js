@@ -37,11 +37,8 @@ var catalogItems = [
   jeansItemObj
 ];
 
-
-
-
 var cartItems = [];
-
+var totalPrice = 0;
 
 for (var i = 0; i < catalogItems.length; i++) {
   var $catalog = document.getElementById('catalog');
@@ -51,7 +48,6 @@ for (var i = 0; i < catalogItems.length; i++) {
   var $catalogItemButtons = document.createElement('div');
   var $catalogItemButtonAdd = document.createElement('button');
   $catalogItemButtonAdd.setAttribute('data-counter', i);
-  var $catalogItemButtonDelete = document.createElement('button');
   $catalogItemPrice.innerHTML = catalogItems[i].price + '$';
   test = catalogItems[i].price;
   $catalogItem.classList.add('catalogItems');
@@ -59,47 +55,48 @@ for (var i = 0; i < catalogItems.length; i++) {
   $catalogItemButtons.classList.add('catalogItemButtons');
   $catalogItemButtonAdd.classList.add('catalogItemButtonAdd');
   $catalogItemButtonAdd.addEventListener('click', handleButtonAdd);
-  $catalogItemButtonDelete.classList.add('catalogItemButtonDelete');
-  $catalogItemButtonDelete.addEventListener('click', handleButtonDelete);
-  $catalogItemButtonAdd.innerHTML = 'Добавить<br>В&nbspкорзину';
-  $catalogItemButtonDelete.innerHTML = 'Удалить';
+  $catalogItemButtonAdd.innerHTML = 'Добавить<br>в&nbspкорзину';
   $catalogImageThumb.src = catalogItems[i].thumb;
   $catalogItemButtons.appendChild($catalogItemButtonAdd);
-  $catalogItemButtons.appendChild($catalogItemButtonDelete);
   $catalogItem.appendChild($catalogImageThumb);
   $catalogItem.appendChild($catalogItemPrice);
   $catalogItem.appendChild($catalogItemButtons);
   $catalog.appendChild($catalogItem);
-
-  
 }
+
 $cart = document.getElementById('cart');
+$price = document.getElementById('price');
+$price.classList.add('price');
 $cart.classList.add('cart');
-
-
-
+var $totalPrice = document.createElement('div');
+$totalPrice.classList.add('totalPrice');
+$price.appendChild($totalPrice);
+var $clearCart = document.createElement('button');
+$clearCart.classList.add('clearCart');
+$clearCart.addEventListener('click', handleButtonclearCart);
+$clearCart.innerHTML = 'Очистить корзину';
+$price.appendChild($clearCart);
 
 function handleButtonAdd(event) {
   var k = this.dataset.counter;
   var $cartItems = document.createElement('div');
   var $cartThumb = document.createElement('img');
+  totalPrice = totalPrice + catalogItems[k].price;
+  $totalPrice.innerHTML = '';
+  $totalPrice.innerHTML = 'Общая стоимость товаров: ' + totalPrice + '$';
   $cartThumb.classList.add('cartThumb');
-  cartItems.push(catalogItems[k].name, catalogItems[k].price + '$');
-  $cartItems.innerHTML = cartItems;
+  $cartItems.innerHTML = 'Товар: ' + catalogItems[k].name + ' Цена:' + catalogItems[k].price + '$';
   $cartThumb.src = catalogItems[k].thumb;
-  $cart.appendChild($cartThumb);
+  $cartItems.classList.add('cartItems');
+  $cartItems.appendChild($cartThumb);
+  $cartItems.setAttribute('data-marker', k);
   $cart.appendChild($cartItems);
-  
-  
 }
 
-function handleButtonDelete(event) {
-  var k = this.dataset.counter;
-  var $cartItems = document.createElement('div');
-  cartItems.pop();
-  cartItems.pop();
-  $cartItems.innerHTML = cartItems;
-  $cart.appendChild($cartItems);
+function handleButtonclearCart(event) {
+  $totalPrice.innerHTML = '';
+  $cart.innerHTML = '';
+  totalPrice = 0;
 }
 
 

@@ -40,15 +40,36 @@
     height: 40px;
 }
 
-.catalogItemButtonDelete {
+.clearCart {
     width: 80px;
     height: 40px;
 }
 
 .cart {
     display: flex;
+    flex-wrap: wrap;
+    width: 850px;
 }
 
+.totalPrice {
+
+    display: flex;
+    flex-direction: column;
+    width: 120px;
+    height: 60px;
+    border: solid 3px rebeccapurple;
+    margin-right: 3px;
+}
+
+.price {
+    display: flex;
+    align-items: center;
+}
+
+.cartItems {
+    display: flex;
+    flex-direction: column;
+}
 
 .cartThumb {
     width: 180px;
