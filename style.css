@@ -5,7 +5,9 @@
 
 .catalog {
     display: flex;
-    height: 100%;
+    width: 850px;
+    border-bottom: solid 1px black;
+    margin-bottom: 30px;
 }
 
 .catalog > div {
@@ -49,6 +51,8 @@
     display: flex;
     flex-wrap: wrap;
     width: 850px;
+    border-bottom: solid 1px black;
+    padding-bottom: 30px;
 }
 
 .totalPrice {
@@ -58,12 +62,15 @@
     width: 120px;
     height: 60px;
     border: solid 3px rebeccapurple;
-    margin-right: 3px;
+    margin-right: 30px;
 }
 
 .price {
+    width: 850px;
     display: flex;
     align-items: center;
+    border-bottom: solid 1px black;
+    padding-bottom: 30px;
 }
 
 .cartItems {
